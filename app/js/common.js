@@ -20,17 +20,41 @@ $(document).ready(function() {
 		});
 
 		// register clicks outisde search box, and toggle correct classes
-		$(document).click(function(e){
-			var clickedID = e.target.id;
-			console.log(clickedID);
-			if (clickedID != 'search-terms' && clickedID != 'search-label') {
-				// console.log('hello');
-				if (searchEl.hasClass('focus')) {
-					searchEl.removeClass('focus');
-					labelEl.removeClass('active');
-				}
-			}
-		});
+		// $(document).click(function(e){
+		// 	var clickedID = e.target.id;
+		// 	console.log(clickedID);
+		// 	if (clickedID != 'search-terms' && clickedID != 'search-label') {
+		// 		// console.log('hello');
+		// 		if (searchEl.hasClass('focus')) {
+		// 			searchEl.removeClass('focus');
+		// 			labelEl.removeClass('active');
+		// 		}
+		// 	}
+		// });
 	}(window));
+
+
+	// Mobile menu
+	$(document).click(function(){
+		$('.sandwich').removeClass('active');
+		$('#primary-menu').slideUp();
+	});
+
+	$(".toggle-menu").click(function(event) {
+		event.stopPropagation();
+		$(".sandwich").toggleClass("active");
+		$("#primary-menu").slideToggle();
+	});
+
+	$(window).resize(function() {
+		if ($(window).width() >= '993'){
+			$('#primary-menu').show();
+			$(".sandwich").removeClass("active");
+
+		}
+		else {
+			$('#primary-menu').hide();
+		}
+	});
 
 });
