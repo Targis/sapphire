@@ -36,8 +36,11 @@ $(document).ready(function() {
 
 	// Mobile menu
 	$(document).click(function(){
-		$('.sandwich').removeClass('active');
-		$('#primary-menu').slideUp();
+		if( $('.sandwich').hasClass('active') ) {
+			$('.sandwich').removeClass('active');
+			$('#primary-menu').slideUp();
+		}
+		
 	});
 
 	$(".toggle-menu").click(function(event) {
