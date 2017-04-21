@@ -329,7 +329,7 @@ section
 		margin-top: 0
 		position: relative
 		&::after
-			content: '\e90e'
+			content: '\e90f'
 			color: $accent
 			display: inline-block
 			font-family: sapphire
@@ -351,6 +351,23 @@ section
 		&::after
 			left: 50%
 			margin-left: -66px
+	.features-img
+		max-width: 520px
+		margin: 70px auto 0
+		position: relative
+		&::before, &::after
+			content: ''
+			display: block
+			height: 100%
+			width: 1px
+			position: absolute
+			top: 0
+			box-shadow: 0 0 80px 65px #000
+		&::after
+			right: 0
+		img
+			margin: 0 auto
+
 
 
 
